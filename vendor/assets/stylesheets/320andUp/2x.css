@@ -1,0 +1,17 @@
+/* 320 and Up */
+/* Panels Upstart */
+/* Version: 1.0 */
+/* Author: Andy Clarke */
+/* URL: http://stuffandnonsense.co.uk/projects/320andup */
+.full {
+  margin-bottom: 1.5em;
+  padding: 1.5em;
+  background-color: #f3f5f6;
+  border-top: 2px solid #c7ced6;
+  border-bottom: 2px solid #c7ced6;
+}
+.full .grids {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.5em 0;
+}
