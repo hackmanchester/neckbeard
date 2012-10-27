@@ -17,7 +17,6 @@ end
 
 Then /^the application will present the clue: (.*)$/ do | clue |
   page.should have_content(clue)
-	page.should have_content("This one will drive you up the wall")
 end
 
 
@@ -30,10 +29,7 @@ Given /^I have been presented the first clue$/ do
   visit '/mositrail/start'
 end
 
-When /^I provide the PIN: MOSI(\d+)$/ do |pin|
+When /^I submit the PIN: MOSI(\d+)$/ do |pin|
   fill_in("PIN", :with => pin)
-end
-
-When /^I submit the PIN$/ do
   click_button "Try"
 end

@@ -16,7 +16,6 @@ Scenario: Starting an mositrail
 @wip
 Scenario: Submitting a correct PIN
 	Given I have been presented the first clue
-	When I provide the PIN: MOSI0001
-	When I submit the PIN
+	When I submit the PIN: MOSI0001
 	Then the application will present the clue: This will make the earth move 
 	And the ability to provide an exhibit code
