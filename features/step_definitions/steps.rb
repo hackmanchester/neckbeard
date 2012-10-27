@@ -25,3 +25,15 @@ end
 And /^the ability to provide an exhibit code$/ do
   page.should have_field("PIN")
 end
+
+Given /^I have been presented the first clue$/ do
+  visit '/mositrail/start'
+end
+
+When /^I provide the PIN: MOSI(\d+)$/ do |pin|
+  fill_in(pin, :with => pin)
+end
+
+When /^I submit the PIN$/ do
+  pending # express the regexp above with the code you wish you had
+end
