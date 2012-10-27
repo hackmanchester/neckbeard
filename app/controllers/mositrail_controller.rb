@@ -1,7 +1,12 @@
 class MositrailController < ApplicationController
 
-  def start() 
+  def start 
+  end
 
+  def index
+  end
+
+  def show
   end
 
 

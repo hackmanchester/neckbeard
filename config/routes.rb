@@ -57,6 +57,6 @@ Mositrails::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
 
-  resources :mositrail, :except => :show
+  resources :mositrail
 
 end
