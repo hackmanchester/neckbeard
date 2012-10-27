@@ -1,11 +1,11 @@
 When /^I start an mositrail$/ do
-  pending # express the regexp above with the code you wish you had
+  visit '/mostitrail/start'
 end
 
 Then /^the application will present the first clue$/ do
-  pending # express the regexp above with the code you wish you had
+  page.should have_content("Let's find your first exhibit"
 end
 
-Then /^the ability to provide an exhibit code$/ do
+And /^the ability to provide an exhibit code$/ do
   pending # express the regexp above with the code you wish you had
 end
