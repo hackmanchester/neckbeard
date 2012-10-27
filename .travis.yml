@@ -20,6 +20,6 @@ notifications:
       - rob.porter.work@gmail.com
       - william.olner@gmail.com
       - jay.underhill@gmail.com
-    on_success: always # default: change
+    #on_success: always # default: change
     on_failure: always # default: always
     # on_failure: [always|never|change] # default: always
