@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+    Exhibit.create(title: 'Fred', clue: 'first', pin: '123', sequence: 0) 
+    Exhibit.create(title: 'sgaf', clue: 'second', pin: '123', sequence: 1) 

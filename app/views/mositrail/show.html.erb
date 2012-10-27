@@ -1,8 +1,9 @@
-<p>Let's find your first exhibit</p>
-<p>This one will drive you up the wall</p>
+
+<p><%= @exhibit.clue %></p>
 
 <form action="/mositrail/try" method="get">
   <label for="pin">Enter your guess PIN</label>
-  <input type="text" name="PIN"/>
+  <input id="pin" type="text" name="PIN"/>
+  <input type="hidden" name="id" value="<%= @exhibit.id %>"/>
   <input type="submit" value="Try"/>
 </form>

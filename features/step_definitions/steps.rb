@@ -1,13 +1,18 @@
-class Exhibit
-  attr_accessor :title
-end
+
  
 
 Given /^the following exhibits exist within mosi:$/ do |exhibits|
   exhibits.hashes.each do | exhibit |
   	new_exhibit = Exhibit.new
-  	new_exhibit.title = exhibit
-
+    new_exhibit.title = exhibit[:Title]
+    
+    new_exhibit.clue = exhibit[:Clue]
+    
+    new_exhibit.pin = exhibit[:PIN]
+    
+    new_exhibit.sequence = exhibit[:Sequence]
+    
+    new_exhibit.save
   end
 end
 
