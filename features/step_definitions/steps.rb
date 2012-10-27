@@ -3,7 +3,7 @@ When /^I start an mositrail$/ do
 end
 
 Then /^the application will present the first clue$/ do
-  page.should have_content("Let's find your first exhibit"
+  page.should have_content("Let's find your first exhibit")
 end
 
 And /^the ability to provide an exhibit code$/ do
