@@ -15,18 +15,17 @@ Scenario: Starting an mositrail
   And the ability to provide an exhibit code
 
 
-Scenario: Submitting a correct PIN
-	Given I have been presented with: 1
-	When I submit the PIN: MOSI0001
-	Then the application will present the clue: This will make the earth move 
+Scenario Outline: Submitting a correct PIN
+	Given I have been presented with: <Id>
+	When I submit the PIN: <PIN>
+	Then the application will present the clue: <Next Clue> 
 	And the ability to provide an exhibit code
 
+  Examples:
+  | Id | PIN      | Next Clue                     |
+  | 1  | MOSI0001 | This will make the earth move |
+  | 2  | MOSI0002 | You can't see the bottom      |
 
-Scenario: Submitting a correct PIN
-  Given I have been presented with: 2
-  When I submit the PIN: MOSI0002
-  Then the application will present the clue: You can't see the bottom
-  And the ability to provide an exhibit code
 
 
 
