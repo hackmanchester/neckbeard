@@ -8,6 +8,10 @@ require "active_resource/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+config.assets.precompile += ['320andUp/style.css']
+config.assets.precompile += ['320andUp/480.css']
+config.assets.precompile += ['320andUp/2x.css']
+
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require(*Rails.groups(:assets => %w(development test)))
