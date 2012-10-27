@@ -48,3 +48,8 @@ end
 Then /^the ability to alter my exhibit code$/ do
   page.should have_field("Enter your guess PIN", :value => "sdfsda")
 end
+
+
+Then /^the application will end the mositrail\.$/ do
+  page.should have_content("Congratulations, you have finished this MOSI Trail")
+end

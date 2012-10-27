@@ -18,7 +18,16 @@ class MositrailController < ApplicationController
       destination_exhibit = current_exhibit
     end
     
-  	redirect_to :action => "show", :id => destination_exhibit.id
+    if (destination_exhibit == nil)
+      redirect_to :action => "congratulate"
+    else
+      redirect_to :action => "show", :id => destination_exhibit.id
+    end
+  	
   end
+
+  def congratulate
+  end
+
 
 end

@@ -34,4 +34,9 @@ Scenario: Incorrect pin
   Then the application will present the clue: This one will drive you up the wall
   And the ability to alter my exhibit code
 
+Scenario: Finished
+  Given I have been presented with: 3
+  When I submit the PIN: MOSI0003
+  Then the application will end the mositrail.  
+
 
