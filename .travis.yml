@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 1.9.3
 env:
-  secure: "47ZwBCvh7HYw2QVjtkoxb2Auy5KadFaRA+wFKroS1QchDcU73wHD3r5jTpnr\n7Vk5aaYYs+4oaXG0rYFTJd6h9V8TR/T6sPZDifVQc1+0JSdxxwHPQmP7AtaU\n5xXfmUzIPIrUQttL4HCT2GseNqdRMRwoeKkRE8xIcxqsypT+N+o="
+  secure: "HURu6FJwYgDeHNkQebUmhc/km39ENCmqjdV/J69fnfCCUwrCFxQ1iMqgoq4t\nwBZoZLerLoV1YlicUSWSxd9SFLkhuHPoihGcU1n7S3JtddVhRG57m8Dk1oUt\n+QkAwgOA0ZrMRbR6e1/l+QNT3V15/rfueExH4nzqiZDrIw+MaKY="
 before_script:
   - "rake db:migrate RAILS_ENV=test"
 
