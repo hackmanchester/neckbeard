@@ -65,5 +65,8 @@ module Mositrails
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.assets.precompile += ['320andUp/style.css', '320andUp/480.css', '320andUp/2x.css']
+
   end
 end

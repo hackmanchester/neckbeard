@@ -1,0 +1,21 @@
+  .grids-two .grid {
+    width: 43.03%;
+    margin-bottom: 0;
+    border-bottom-width: 0;
+  }
+  .grids-two .grid-1 {
+    float: left;
+  }
+  .grids-two .grid-2 {
+    float: right;
+  }
+  .grids-three .grid-a {
+    float: left;
+    width: 31.64%;
+    margin-right: 2.53%;
+  }
+  .grids-four .grid-a {
+    float: left;
+    width: 31.64%;
+    margin-right: 2.53%;
+  }

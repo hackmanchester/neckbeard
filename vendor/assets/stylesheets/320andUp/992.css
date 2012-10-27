@@ -1,0 +1,31 @@
+  .grids-three .grid {
+    float: left;
+    width: 31.64%;
+    margin: 0 2.53% 0 0;
+    border-bottom-width: 0;
+  }
+  .grids-three .grid-3 {
+    float: right;
+    margin-right: 0;
+  }
+  .grids-three .grid .grid-a {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.75em;
+  }
+  .grids-four .grid {
+    float: left;
+    width: 20.25%;
+    margin: 0 6.32% 0 0;
+    border-bottom-width: 0;
+  }
+  .grids-four .grid-4 {
+    float: right;
+    margin-right: 0;
+  }
+  .grids-four .grid .grid-a {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
