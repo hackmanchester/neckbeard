@@ -23,5 +23,5 @@ end
 
 
 And /^the ability to provide an exhibit code$/ do
-  have_field("PIN")
+  page.should have_field("PIN")
 end
