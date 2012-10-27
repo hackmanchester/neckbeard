@@ -31,9 +31,9 @@ Given /^I have been presented the first clue$/ do
 end
 
 When /^I provide the PIN: MOSI(\d+)$/ do |pin|
-  fill_in(pin, :with => pin)
+  fill_in("PIN", :with => pin)
 end
 
 When /^I submit the PIN$/ do
-  pending # express the regexp above with the code you wish you had
+  click_button "Try"
 end
