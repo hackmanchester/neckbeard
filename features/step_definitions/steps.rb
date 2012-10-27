@@ -22,14 +22,16 @@ end
 
 
 And /^the ability to provide an exhibit code$/ do
-  page.should have_field("PIN")
+  page.should have_field("Enter your guess PIN")
 end
 
-Given /^I have been presented the first clue$/ do
-  visit '/mositrail/start'
-end
 
 When /^I submit the PIN: MOSI(\d+)$/ do |pin|
   fill_in("PIN", :with => pin)
   click_button "Try"
+end
+
+
+Given /^I have been presented with: (\d+)$/ do |id|
+  visit "/mositrail/show/#{id}"
 end
