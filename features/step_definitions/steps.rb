@@ -31,7 +31,7 @@ And /^the ability to provide an exhibit code$/ do
 end
 
 
-When /^I submit the PIN: MOSI(\d+)$/ do |pin|
+When /^I submit the PIN: (.*)$/ do |pin|
   fill_in("PIN", :with => pin)
   click_button "Try"
 end
@@ -39,4 +39,12 @@ end
 
 Given /^I have been presented with: (\d+)$/ do |id|
   visit "/mositrail/show/#{id}"
+end
+
+Then /^the application will inform me of incorrect pin$/ do
+  page.should have_content("Incorrect pin, please try again!!")
+end
+
+Then /^the ability to alter my exhibit code$/ do
+  page.should have_field("Enter your guess PIN", :value => "sdfsda")
 end

@@ -11,8 +11,14 @@ class MositrailController < ApplicationController
 
   def try
     current_exhibit = Exhibit.find(params[:id])
-    next_exhibit = Exhibit.find(:first, :conditions => {:sequence => current_exhibit.sequence + 1})
-  	redirect_to :action => "show", :id => next_exhibit.id
+    if (current_exhibit.pin == params[:pin])
+      destination_exhibit = Exhibit.find(:first, :conditions => {:sequence => current_exhibit.sequence + 1})  
+    else
+      flash[:error] = "Incorrect pin, please try again!!"
+      destination_exhibit = current_exhibit
+    end
+    
+  	redirect_to :action => "show", :id => destination_exhibit.id
   end
 
 end

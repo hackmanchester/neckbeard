@@ -15,7 +15,7 @@ Scenario: Starting an mositrail
   And the ability to provide an exhibit code
 
 
-Scenario Outline: Submitting a correct PIN
+Scenario Outline: Correct pins should forward onto next exhibit
 	Given I have been presented with: <Id>
 	When I submit the PIN: <PIN>
 	Then the application will present the clue: <Next Clue> 
@@ -27,5 +27,11 @@ Scenario Outline: Submitting a correct PIN
   | 2  | MOSI0002 | You can't see the bottom      |
 
 
+Scenario: Incorrect pin
+  Given I have been presented with: 1
+  When I submit the PIN: sdfkljsf
+  Then the application will inform me of incorrect pin
+  Then the application will present the clue: This one will drive you up the wall
+  And the ability to alter my exhibit code
 
 
