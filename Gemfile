@@ -11,7 +11,8 @@ gem 'pg'
 end
 
 group :test, :development do
-gem 'sqlite3'
+	gem 'sqlite3'
+	gem 'launchy'
 end
 
 # Gems used only for assets and not required

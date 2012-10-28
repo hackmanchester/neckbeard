@@ -19,7 +19,7 @@ Given /^the following exhibits exist within mosi:$/ do |exhibits|
     
     new_exhibit.save
   end
-  FactoryGirl.create(:user)
+  
 end
 
 When /^I register as Williams$/ do
@@ -30,6 +30,30 @@ end
 
 Then /^I will be presented with the list of trails$/ do
   page.should have_content('Select MOSI Trail')
+end
+
+Given /^I have registered$/ do
+  FactoryGirl.create(:user)
+end
+
+
+Given /^the following trails exist$/ do |trails_table|
+  trails_table.hashes.each do | trail |
+    new_trail = Trail.new
+    new_trail.name = trail[:name]
+    new_trail.save
+  end
+end
+
+When /^I view the list of trails$/ do
+  visit '/mositrail/pick_trail'
+end
+
+Then /^I should see Science$/ do
+
+end
+
+Then /^I should see Industry$/ do
 end
 
 Then /^I will be registered$/ do

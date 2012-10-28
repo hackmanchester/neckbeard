@@ -9,6 +9,7 @@ class MositrailController < ApplicationController
   end
 
   def pick_trail
+    @trails = Trail.all
   end
 
   def start
