@@ -3,30 +3,31 @@ class MositrailController < ApplicationController
   end
 
   def register
-    user = User.new :name => params[:name]
+    user = User.new :name => params[:name], :score => 0
     user.save
-    redirect_to :action => "pick_trail"
+    redirect_to :action => "pick_trail", :user_id => user.id
   end
 
   def pick_trail
     @trails = Trail.all
+    @user_id = params[:user_id]
   end
 
   def start
     first_exhibit = Exhibit.find(:first, :conditions => {:sequence => 0})
-    redirect_to :action => "show", :id => first_exhibit.id
+    redirect_to :action => "show", :id => first_exhibit.id, :user_id => params[:user_id]
   end
 
   def show
     @exhibit = Exhibit.find(params[:id])
+    @user_id = params[:user_id]
   end
 
   def try
     current_exhibit = get_current_exhibit(params)
-    puts "current pin is: " + current_exhibit.pin
-    puts "try pin is: " + params[:pin]
+
     if (current_exhibit.pin == params[:pin])
-      user  = User.find(1)
+      user  = get_current_user(params)
       user.score = user.score + 1
       user.save
       destination_exhibit = get_next_exhibit(current_exhibit)
@@ -35,9 +36,13 @@ class MositrailController < ApplicationController
       destination_exhibit = current_exhibit
     end
 
-    finish_or_show_next_exhibit(destination_exhibit)
+    finish_or_show_next_exhibit(destination_exhibit, params)
 
   end
+
+  def get_current_user(params)
+    User.find(params[:user_id])
+  end 
 
   def get_current_exhibit(params)
     Exhibit.find(params[:id])
@@ -47,15 +52,16 @@ class MositrailController < ApplicationController
     Exhibit.find(:first, :conditions => {:sequence => current_exhibit.sequence + 1})
   end
 
-  def finish_or_show_next_exhibit(next_exhibit)
+  def finish_or_show_next_exhibit(next_exhibit, params)
     if (next_exhibit == nil)
-      redirect_to :action => "congratulate"
+      redirect_to :action => "congratulate", :user_id => params[:user_id]
     else
-      redirect_to :action => "show", :id => next_exhibit.id
+      redirect_to :action => "show", :id => next_exhibit.id, :user_id => params[:user_id]
     end
   end
 
   def congratulate
+    @user = get_current_user(params)
   end
 
   def skip
@@ -63,7 +69,7 @@ class MositrailController < ApplicationController
     next_exhibit = get_next_exhibit(current_exhibit)
     flash[:notice] = "Previous exhibit skipped."
 
-    finish_or_show_next_exhibit(next_exhibit)
+    finish_or_show_next_exhibit(next_exhibit, params)
 
   end
 

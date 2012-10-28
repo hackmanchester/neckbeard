@@ -5,11 +5,13 @@
   <label for="pin">Enter your guess PIN</label>
   <input id="pin" type="text" name="pin"/>
   <input type="hidden" name="id" value="<%= @exhibit.id %>"/>
+  <input type="hidden" name="user_id" value="<%= @user_id %>"/>
   <input type="submit" value="Try"/>
 </form>
 
 
 <form action="/mositrail/skip" method="get">
   <input type="hidden" name="id" value="<%= @exhibit.id %>"/>
+  <input type="hidden" name="user_id" value="<%= @user_id %>"/>
   <input type="submit" value="Skip"/>
 </form>

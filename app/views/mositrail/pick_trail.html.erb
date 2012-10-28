@@ -2,5 +2,8 @@ Select MOSI Trail
 <ul>
 	<li><a href="/mositrail/start/1">Science</a></li>
 	<li><a href="/mositrail/start/1">Industry</a></li>
-
+	<form action="/mositrail/start/1" method="POST">
+		<input type="hidden" name="user_id" value="<%= @user_id %>"/>
+		<input type="submit" value="Start Trail"/>
+	</form>
 </ul>
