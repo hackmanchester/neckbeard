@@ -69,8 +69,9 @@ class MositrailController < ApplicationController
   def skip
     current_exhibit = Exhibit.find(params[:id])
     next_exhibit = get_next_exhibit(current_exhibit)
-    flash[:notice] = "Previous exhibit skipped."
-
+    if (next_exhibit != nil)
+      flash[:notice] = "Previous exhibit skipped."
+    end
     finish_or_show_next_exhibit(next_exhibit, params)
 
   end
