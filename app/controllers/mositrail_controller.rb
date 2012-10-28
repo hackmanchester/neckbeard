@@ -3,7 +3,9 @@ class MositrailController < ApplicationController
   end
 
   def register
-    user = User.new :name => params[:name], :score => 0
+    user = User.new 
+    user.name = params[:name]
+    user.score = 0
     user.save
     redirect_to :action => "pick_trail", :user_id => user.id
   end
