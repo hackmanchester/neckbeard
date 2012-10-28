@@ -6,9 +6,9 @@ class MositrailController < ApplicationController
     user = User.new 
     user.name = params[:name]
     if user.name.length < 4
-	flash[:error] = "ERROR Blank Username!"
-	redirect_to :action => "welcome"
-	return
+      flash[:error] = "ERROR Blank Username!"
+      redirect_to :action => "welcome"
+      return
     end
     user.score = 0
     user.save
@@ -20,7 +20,7 @@ class MositrailController < ApplicationController
     @user_id = params[:user_id]
   end
 
-  def trails_info
+  def pick_trail_info
     trails = Trail.all
     render :json => trails
   end
@@ -30,11 +30,24 @@ class MositrailController < ApplicationController
     redirect_to :action => "show", :id => first_exhibit.id, :user_id => params[:user_id], :trail_id => params[:trail_id]
   end
 
+  def start_info
+    first_exhibit = Exhibit.find(:first, :conditions => {:sequence => 0, :trail_id => params[:trail_id]})
+    redirect_to :action => "show_info", :id => first_exhibit.id, :user_id => params[:user_id], :trail_id => params[:trail_id]
+  end
+
+
   def show
     @exhibit = Exhibit.find(params[:id])
     @user_id = params[:user_id]
     @trail_id = params[:trail_id]
   end
+
+
+  def show_info
+    exhibit = Exhibit.find(params[:id])
+    render :json => exhibit
+  end
+  
 
   def try
     current_exhibit = get_current_exhibit(params)
