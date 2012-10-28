@@ -1,5 +1,6 @@
 Select MOSI Trail
 <ul>
-	<li><a href="/mositrail/start/1?user_id=<%= @user_id %>">Science</a></li>
-	<li><a href="/mositrail/start/1?user_id=<%= @user_id %>">Industry</a></li>
+<% @trails.each do | trail | %>
+	<li><a href="/mositrail/start/<%=trail.id %>?user_id=<%= @user_id %>"><%=trail.name%></li>
+<% end %>
 </ul>

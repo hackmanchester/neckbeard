@@ -5,7 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-    Exhibit.create(title: 'Fred', clue: 'first', pin: 'MOSI0014', sequence: 0)
-    Exhibit.create(title: 'sgaf', clue: 'second', pin: 'MOSI0013', sequence: 1)
+
+Trail.create(name: 'Trail One')
+Trail.create(name: 'Trail Two')
+    
+Exhibit.create(title: 'Fred', clue: 'first', pin: 'MOSI0014', sequence: 0)
+Exhibit.create(title: 'sgaf', clue: 'second', pin: 'MOSI0013', sequence: 1)
 
 User.create(score: 0)
