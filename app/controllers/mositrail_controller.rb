@@ -12,6 +12,9 @@ class MositrailController < ApplicationController
   def try
     current_exhibit = get_current_exhibit(params)
     if (current_exhibit.pin == params[:pin])
+      user  = User.find(1)
+      user.score = user.score + 1
+      user.save
       destination_exhibit = get_next_exhibit(current_exhibit)
     else
       flash[:error] = "Incorrect pin, please try again!!"
