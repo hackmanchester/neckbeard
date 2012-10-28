@@ -1,8 +1,8 @@
 class MositrailController < ApplicationController
 
-  def start 
-  	first_exhibit = Exhibit.find(:first, :conditions => {:sequence => 0})
-  	redirect_to :action => "show", :id => first_exhibit.id
+  def start
+    first_exhibit = Exhibit.find(:first, :conditions => {:sequence => 0})
+    redirect_to :action => "show", :id => first_exhibit.id
   end
 
   def show
@@ -11,6 +11,8 @@ class MositrailController < ApplicationController
 
   def try
     current_exhibit = get_current_exhibit(params)
+    puts "current pin is: " + current_exhibit.pin
+    puts "try pin is: " + params[:pin]
     if (current_exhibit.pin == params[:pin])
       user  = User.find(1)
       user.score = user.score + 1
@@ -22,7 +24,7 @@ class MositrailController < ApplicationController
     end
 
     finish_or_show_next_exhibit(destination_exhibit)
-  	
+
   end
 
   def get_current_exhibit(params)
@@ -30,7 +32,7 @@ class MositrailController < ApplicationController
   end
 
   def get_next_exhibit(current_exhibit)
-    Exhibit.find(:first, :conditions => {:sequence => current_exhibit.sequence + 1})  
+    Exhibit.find(:first, :conditions => {:sequence => current_exhibit.sequence + 1})
   end
 
   def finish_or_show_next_exhibit(next_exhibit)
@@ -50,7 +52,7 @@ class MositrailController < ApplicationController
     flash[:notice] = "Previous exhibit skipped."
 
     finish_or_show_next_exhibit(next_exhibit)
-    
+
   end
 
 
