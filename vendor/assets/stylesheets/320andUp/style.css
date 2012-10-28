@@ -111,13 +111,13 @@ color: #777777;
   clip: auto;
   height: auto;
   width: auto;
-  margin: 1;
+  margin: 10;
   overflow: visible;
 }
 /* Page =================================================== */
 html {
   background: #ffffff;
-  font-size: 100%;
+  font-size: 90%;
   -webkit-overflow-scrolling: touch;
   -webkit-tap-highlight-color: #f3f5f6;
   -webkit-text-size-adjust: 100%;
@@ -126,14 +126,14 @@ html {
   background-repeat: repeat;
 }
 body {
-  margin: 20;
+  margin: 10;
   padding: 10;
   width: 100%;
   background-color: transparent; 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 30px;
-  font-size: 2.6rem;
-  line-height: 0.5em;
+  font-size: 1.6rem;
+  line-height: 1.5em;
   color: #777777;
   background-image: url('/assets/whitey.png');
   background-repeat: repeat;
@@ -220,6 +220,7 @@ h6,
 .header h1:hover,
 .header h2:hover,
 .header h3:hover {
+text-decoration: bold;
   background-color: #f3f5f6;
 }
 .header .a-rss,
@@ -1281,7 +1282,7 @@ label,
 input,
 button{
   font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 2.0rem;
   text-align:center;
   vertical-align: middle;
   *vertical-align: middle;
@@ -1574,10 +1575,11 @@ input:-moz-placeholder {
 .btn:visited,
 .btn:hover {
   color: #777777;
-  text-decoration: none;
+  text-decoration: bold;
 }
 input[type="submit"].btn:hover {
   border-color: #cccccc;
+  text-decoration: bold;
 }
 .btn:first-child {
   *margin-left: 0;
@@ -1621,6 +1623,7 @@ input[type="submit"].btn:hover {
 .btn-info:visited,
 .btn-info:hover {
   color: #247fad;
+text-decoration: bold;
 }
 .btn-inverse {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#414141), to(#272727));
@@ -1637,6 +1640,7 @@ input[type="submit"].btn:hover {
 }
 .btn-inverse:visited,
 .btn-inverse:hover {
+text-decoration: bold;
   color: #ffffff;
 }
 .btn-primary {
@@ -1654,6 +1658,7 @@ input[type="submit"].btn:hover {
 }
 .btn-primary:visited,
 .btn-primary:hover {
+text-decoration: bold;
   color: #ffffff;
 }
 .btn-success {
