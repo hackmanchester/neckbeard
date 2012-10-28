@@ -39,4 +39,16 @@ Scenario: Finished
   When I submit the PIN: MOSI0003
   Then the application will end the mositrail.  
 
+Scenario: Skip a exhibit
+  Given I have been presented with: 1
+  When I chooose to skip 
+  Then the application will inform me that I skipped an exhibit
+  And the application will present the clue: This will make the earth move 
+  And the ability to provide an exhibit code  
+
+Scenario: Finished through a skip
+  Given I have been presented with: 3
+  When I chooose to skip 
+  Then the application will end the mositrail.  
+
 

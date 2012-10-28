@@ -36,6 +36,9 @@ When /^I submit the PIN: (.*)$/ do |pin|
   click_button "Try"
 end
 
+When /^I chooose to skip$/ do
+  click_button "Skip"
+end
 
 Given /^I have been presented with: (\d+)$/ do |id|
   visit "/mositrail/show/#{id}"
@@ -52,4 +55,8 @@ end
 
 Then /^the application will end the mositrail\.$/ do
   page.should have_content("Congratulations, you have finished this MOSI Trail")
+end
+
+Then /^the application will inform me that I skipped an exhibit$/ do
+  page.should have_content("Previous exhibit skipped.")
 end
