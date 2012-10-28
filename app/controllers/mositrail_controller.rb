@@ -15,6 +15,11 @@ class MositrailController < ApplicationController
     @user_id = params[:user_id]
   end
 
+  def trails_info
+    trails = Trail.all
+    render :json => trails
+  end
+
   def start
     first_exhibit = Exhibit.find(:first, :conditions => {:sequence => 0, :trail_id => params[:trail_id]})
     redirect_to :action => "show", :id => first_exhibit.id, :user_id => params[:user_id], :trail_id => params[:trail_id]
