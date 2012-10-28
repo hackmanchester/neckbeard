@@ -1,0 +1,8 @@
+<!-- For all browsers -->
+<%= stylesheet_link_tag '320andUp/style.css'%>
+<!-- For progressively larger displays -->
+<%= stylesheet_link_tag '320andUp/480.css',  :media => 'only screen and (min-width: 480px)' %>
+<!-- For Retina displays -->
+<%= stylesheet_link_tag '320andUp/2x.css',  :media => 'only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5)' %>
+
+<%= stylesheet_link_tag "application" %>

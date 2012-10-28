@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 1.9.3
 env:
-  secure: "47ZwBCvh7HYw2QVjtkoxb2Auy5KadFaRA+wFKroS1QchDcU73wHD3r5jTpnr\n7Vk5aaYYs+4oaXG0rYFTJd6h9V8TR/T6sPZDifVQc1+0JSdxxwHPQmP7AtaU\n5xXfmUzIPIrUQttL4HCT2GseNqdRMRwoeKkRE8xIcxqsypT+N+o="
+  secure: "D/xOWVqYcxmZyR18Sj93VcW9LaoPZcRN5aSzDCAcODtyFjRfihIxe6/G41do\nxf1lhU4aUm7d2ht7Vwh4TIPc+euTeGM2DRZviOqYMdEnhoxZd4B1TBjyzwkK\ntZWBFSBOetw0ocmFBlSo1iAKWm7oQQo1qAV5fs2W7Da5Y+lzbgU="
 before_script:
   - "rake db:migrate RAILS_ENV=test"
 
@@ -20,6 +20,6 @@ notifications:
       - rob.porter.work@gmail.com
       - william.olner@gmail.com
       - jay.underhill@gmail.com
-    on_success: always # default: change
+    #on_success: always # default: change
     on_failure: always # default: always
     # on_failure: [always|never|change] # default: always

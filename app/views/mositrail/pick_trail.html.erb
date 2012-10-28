@@ -1,0 +1,6 @@
+Select MOSI Trail
+<ul>
+<% @trails.each do | trail | %>
+	<li><a href="/mositrail/start?trail_id=<%=trail.id %>&user_id=<%= @user_id %>"><%=trail.name%></li>
+<% end %>
+</ul>
