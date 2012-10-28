@@ -122,17 +122,21 @@ html {
   -webkit-tap-highlight-color: #f3f5f6;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  background-image: url('/assets/whitey.png');
+  background-repeat: repeat;
 }
 body {
   margin: 20;
   padding: 10;
   width: 100%;
-  background-color: transparent;
+  background-color: transparent; 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 30px;
   font-size: 2.6rem;
   line-height: 0.5em;
   color: #777777;
+  background-image: url('/assets/whitey.png');
+  background-repeat: repeat;
 }
 /* Typography =================================================== */
 h1,
