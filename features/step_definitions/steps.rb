@@ -1,5 +1,10 @@
 
- 
+module KnowsMe
+  def me 
+    User.find(1)
+  end
+end
+World(KnowsMe)
 
 Given /^the following exhibits exist within mosi:$/ do |exhibits|
   exhibits.hashes.each do | exhibit |
@@ -14,6 +19,7 @@ Given /^the following exhibits exist within mosi:$/ do |exhibits|
     
     new_exhibit.save
   end
+  FactoryGirl.create(:user)
 end
 
 When /^I start an mositrail$/ do
@@ -59,4 +65,13 @@ end
 
 Then /^the application will inform me that I skipped an exhibit$/ do
   page.should have_content("Previous exhibit skipped.")
+end
+
+
+Then /^increments the score$/ do  
+  me.score.should eq(1)
+end
+
+Then /^does not increment the score$/ do
+  me.score.should eq(0)
 end
