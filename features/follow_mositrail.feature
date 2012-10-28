@@ -1,12 +1,12 @@
 Feature: To enable me to participate in a mositrail, as a visitor, I want to follow a set of clues and see my score
 
 Background: 
-
   Given the following exhibits exist within mosi:
   | ID | Title            | Clue                                 | PIN       | Sequence |
   | 1  | Top Gears        | This one will drive you up the wall  | MOSI0001  | 0        |
   | 2  | Earthquake Table | This will make the earth move        | MOSI0002  | 1        |
   | 3  | Infinity well    | You can't see the bottom             | MOSI0003  | 2        |
+  And I have registered
 
 
 Scenario: Starting an mositrail  

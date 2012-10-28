@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  attr_accessible :score
+  attr_accessible :score, :name
 end

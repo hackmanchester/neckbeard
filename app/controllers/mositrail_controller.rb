@@ -1,4 +1,16 @@
 class MositrailController < ApplicationController
+  def welcome
+  end
+
+  def register
+    user = User.new :name => params[:name]
+    user.save
+    redirect_to :action => "pick_trail"
+  end
+
+  def pick_trail
+    @trails = Trail.all
+  end
 
   def start
     first_exhibit = Exhibit.find(:first, :conditions => {:sequence => 0})
