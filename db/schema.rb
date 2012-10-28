@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121028050119) do
+ActiveRecord::Schema.define(:version => 20121028075159) do
 
   create_table "exhibits", :force => true do |t|
     t.string  "title"
     t.string  "clue"
     t.string  "pin"
     t.integer "sequence"
+    t.integer "trail_id"
   end
 
   create_table "trails", :force => true do |t|

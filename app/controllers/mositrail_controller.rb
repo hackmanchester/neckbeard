@@ -16,23 +16,25 @@ class MositrailController < ApplicationController
   end
 
   def start
-    first_exhibit = Exhibit.find(:first, :conditions => {:sequence => 0})
-    redirect_to :action => "show", :id => first_exhibit.id, :user_id => params[:user_id]
+    first_exhibit = Exhibit.find(:first, :conditions => {:sequence => 0, :trail_id => params[:trail_id]})
+    redirect_to :action => "show", :id => first_exhibit.id, :user_id => params[:user_id], :trail_id => params[:trail_id]
   end
 
   def show
     @exhibit = Exhibit.find(params[:id])
     @user_id = params[:user_id]
+    @trail_id = params[:trail_id]
   end
 
   def try
     current_exhibit = get_current_exhibit(params)
 
+
     if (current_exhibit.pin == params[:pin])
       user  = get_current_user(params)
       user.score = user.score + 1
       user.save
-      destination_exhibit = get_next_exhibit(current_exhibit)
+      destination_exhibit = get_next_exhibit(current_exhibit, params)
     else
       flash[:error] = "Incorrect pin, please try again!!"
       destination_exhibit = current_exhibit
@@ -50,8 +52,8 @@ class MositrailController < ApplicationController
     Exhibit.find(params[:id])
   end
 
-  def get_next_exhibit(current_exhibit)
-    Exhibit.find(:first, :conditions => {:sequence => current_exhibit.sequence + 1})
+  def get_next_exhibit(current_exhibit, params)
+    Exhibit.find(:first, :conditions => {:sequence => current_exhibit.sequence + 1, :trail_id => params[:trail_id]})
   end
 
   def finish_or_show_next_exhibit(next_exhibit, params)
@@ -68,7 +70,7 @@ class MositrailController < ApplicationController
 
   def skip
     current_exhibit = Exhibit.find(params[:id])
-    next_exhibit = get_next_exhibit(current_exhibit)
+    next_exhibit = get_next_exhibit(current_exhibit, params)
     if (next_exhibit != nil)
       flash[:notice] = "Previous exhibit skipped."
     end
