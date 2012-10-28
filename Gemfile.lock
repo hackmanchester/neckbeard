@@ -160,7 +160,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner
-  factory_girl
+  factory_girl (= 4.1.0)
   jquery-rails
   pg
   rails (= 3.2.8)
