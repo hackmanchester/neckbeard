@@ -1,12 +1,19 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'therubyracer'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :production do
+gem 'pg'
+end
 
+group :test, :development do
+	gem 'sqlite3'
+	gem 'launchy'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,6 +31,7 @@ group :test do
 	gem 'cucumber-rails'
 	gem 'database_cleaner'
 	gem 'rspec-rails'
+  gem 'factory_girl', '= 4.1.0'
 end
 
 gem 'jquery-rails'
