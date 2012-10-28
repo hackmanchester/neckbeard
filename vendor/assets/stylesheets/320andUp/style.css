@@ -1245,6 +1245,7 @@ figure figcaption {
 /* Forms =================================================== */
 form {
   margin: 1 0 1.5em 0;
+  padding: 0em 1em 0em 1em;
 }
 form fieldset {
   margin-bottom: 1.5em;
