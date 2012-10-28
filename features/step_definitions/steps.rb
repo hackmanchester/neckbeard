@@ -22,6 +22,21 @@ Given /^the following exhibits exist within mosi:$/ do |exhibits|
   FactoryGirl.create(:user)
 end
 
+When /^I register as Williams$/ do
+  visit '/mositrail/welcome'
+  fill_in 'name', :with => 'Williams'
+  click_button 'Register'
+end
+
+Then /^I will be presented with the list of trails$/ do
+  page.should have_content('Select MOSI Trail')
+end
+
+Then /^I will be registered$/ do
+  User.find(:all, :conditions ["name='Williams'"]).count.should eq(1)
+end
+
+
 When /^I start an mositrail$/ do
   visit '/mositrail/start'
 end
