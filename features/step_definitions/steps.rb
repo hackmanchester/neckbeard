@@ -37,6 +37,9 @@ Given /^I have registered$/ do
 end
 
 
+
+
+
 Given /^the following trails exist$/ do |trails_table|
   trails_table.hashes.each do | trail |
     new_trail = Trail.new
@@ -60,6 +63,21 @@ Then /^I will be registered$/ do
   User.find(:all, :conditions ["name='Williams'"]).count.should eq(1)
 end
 
+@wip
+When /^I register as \[Blank\]$/ do
+  visit '/mositrail/welcome'
+  fill_in 'name', :with => ''
+  click_button 'Register'
+end
+
+Then /^I will not be presented with the list of trails$/ do
+  page.should have_no_content "Select MOSI Trail"
+end
+
+And /^I will be given an error$/ do
+  page.should have_content('ERROR')
+end
+
 
 When /^I start an mositrail$/ do
   visit '/mositrail/start'
@@ -75,12 +93,13 @@ And /^the ability to provide an exhibit code$/ do
   page.should have_field("Enter your guess PIN")
 end
 
-
+@wip
 When /^I submit the PIN: (.*)$/ do |pin|
   fill_in("PIN", :with => pin)
   click_button "Try"
 end
 
+@wip
 When /^I chooose to skip$/ do
   click_button "Skip"
 end

@@ -5,6 +5,11 @@ class MositrailController < ApplicationController
   def register
     user = User.new 
     user.name = params[:name]
+    if user.name.length < 4
+	flash[:error] = "ERROR Blank Username!"
+	redirect_to :action => "welcome"
+	return
+    end
     user.score = 0
     user.save
     redirect_to :action => "pick_trail", :user_id => user.id
