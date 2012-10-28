@@ -94,6 +94,8 @@ section {
 /* Mixins =================================================== */
 .clearfix {
   *zoom: 1;
+text-align: center;
+color: #777777;
 }
 .clearfix:before,
 .clearfix:after {
@@ -109,7 +111,7 @@ section {
   clip: auto;
   height: auto;
   width: auto;
-  margin: 0;
+  margin: 1;
   overflow: visible;
 }
 /* Page =================================================== */
@@ -129,8 +131,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 30px;
   font-size: 2.6rem;
-  line-height: 1.5em;
-  color: #53687a;
+  line-height: 0.5em;
+  color: #777777;
 }
 /* Typography =================================================== */
 h1,
@@ -196,7 +198,7 @@ h6,
 .header h1,
 .header h2,
 .header h3 {
-  float: left;
+  float: center;
   margin-right: 24px;
 }
 .header h1 a,
@@ -1237,7 +1239,7 @@ figure figcaption {
 }
 /* Forms =================================================== */
 form {
-  margin: 0 0 1.5em 0;
+  margin: 1 0 1.5em 0;
 }
 form fieldset {
   margin-bottom: 1.5em;
@@ -1273,12 +1275,19 @@ form br {
 }
 label,
 input,
-button,
+button{
+  font-size: 14px;
+  font-size: 1.4rem;
+  text-align:center;
+  vertical-align: middle;
+  *vertical-align: middle;
+}
 select,
 textarea {
   font-size: 14px;
   font-size: 1.4rem;
-  vertical-align: baseline;
+  text-align:center;
+  vertical-align: middle;
   *vertical-align: middle;
 }
 input,
@@ -1292,6 +1301,8 @@ textarea {
   box-sizing: border-box;
 }
 label {
+  text-align:center;
+  vertical-align: middle;
   display: block;
   margin-bottom: 0.1875em;
   font-weight: bold;
@@ -1374,18 +1385,21 @@ input[type="submit"] {
   height: auto;
   cursor: pointer;
   *overflow: visible;
+text-align: center;
 }
 select,
 input[type="file"] {
   height: 28px;
   *margin-top: 4px;
   line-height: 28px;
+text-align: center;
 }
 select {
   width: auto;
   background-color: #ffffff;
   font-size: 13px;
   font-size: 1.3rem;
+text-align: center;
 }
 select[multiple],
 select[size] {
@@ -1552,11 +1566,10 @@ input:-moz-placeholder {
   -moz-border-radius: 4px;
   border-radius: 4px;
   cursor: pointer;
-  *margin-left: .3em;
 }
 .btn:visited,
 .btn:hover {
-  color: #404040;
+  color: #777777;
   text-decoration: none;
 }
 input[type="submit"].btn:hover {
